@@ -1,0 +1,6 @@
+<resources>
+
+    <string name="mySongs">My songs</string>
+    <string name="search">Search my songs</string>
+    <string name="nowPlay"> % song Artist</string>
+</resources>
