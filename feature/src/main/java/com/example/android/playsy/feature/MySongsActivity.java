@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,39 +36,41 @@ public class MySongsActivity extends AppCompatActivity {
         songs.add(new Songs("Lazy song", "Bruno Mars"));
         songs.add(new Songs("Sugar", "Maroon5 "));
 
-        // Create an {@link ArrayAdapter}, whose data source is a list of Strings. The
-        // adapter knows how to create layouts for each item in the list, using the
-        // simple_list_item_1.xml layout resource defined in the Android framework.
-        // This list item layout contains a single {@link TextView}, which the adapter will set to
-        // display a single word.
-        final SongAdapter adapter = new SongAdapter(this, songs);
+        // Create an ArrayAdapter whose data source is a list of Strings. .
 
-        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
-        // There should be a {@link ListView} with the view ID called list, which is declared in the
-        // word_list.xml file.
+        final SongAdapter adapter = new SongAdapter(this, R.layout.activity_list_item, songs);
+
+        // Find the ListView
         ListView listView = (ListView) findViewById(R.id.songList);
 
-        // Make the {@link ListView} use the {@link ArrayAdapter} we created above, so that the
-        // {@link ListView} will display list items for each word in the list of words.
-        // Do this by calling the setAdapter method on the {@link ListView} object and pass in
-        // 1 argument, which is the {@link ArrayAdapter} with the variable name itemsAdapter.
+        // Make the ListView use the ArrayAdapter
         listView.setAdapter(adapter);
 
+
+        //set On Item ClickListener on the List View with an intent to open a new activity
+        // that displays the currently picked item (song, in this case) and passes the necessary data to the new activity
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 
 
-                Songs currentlyClickedSong = (Songs)adapterView.getItemAtPosition(position);
+                Songs currentlyClickedSong = (Songs) adapter.getItem(position);
                 Intent mySongsIntent = new Intent(MySongsActivity.this, SongNowPlaying.class);
-                mySongsIntent.putExtra("songs", (Parcelable) currentlyClickedSong);
+                mySongsIntent.putExtra("songs", currentlyClickedSong);
                 startActivity(mySongsIntent);
             }
         });
-    }
 
+        adapter.notifyDataSetChanged();
+    }
 }
+
+
+
+
+
+
 
 
 

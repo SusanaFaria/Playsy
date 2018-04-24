@@ -14,21 +14,18 @@ import java.util.ArrayList;
 public class SongAdapter extends ArrayAdapter<Songs> {
 
 
-    public SongAdapter(Activity context, ArrayList<Songs> songs) {
-        // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
-        // the second argument is used when the ArrayAdapter is populating a single TextView.
-        // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
-        // going to use this second argument, so it can be any value. Here, we used 0.
+    public SongAdapter(Activity context, int activity_list_item, ArrayList<Songs> songs) {
+        // Initialize the ArrayAdapter's internal storage for the context and the list.
         super(context, 0, songs);
     }
 
     /**
-     * Provides a view for an AdapterView (ListView, GridView, etc.)
+     * Provides a view for the ListView
      *
-     * @param position The position in the list of data that should be displayed in the
-     *                 list item view.
+     * @param position    The position in the list of data that should be displayed in the
+     *                    list item view.
      * @param convertView The recycled view to populate.
-     * @param parent The parent ViewGroup that is used for inflation.
+     * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
     @NonNull
@@ -37,29 +34,28 @@ public class SongAdapter extends ArrayAdapter<Songs> {
 
         // Check if the existing view is being reused, otherwise inflate the view
         View listItemView = convertView;
-        if(listItemView == null) {
+        if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.activity_list_item, parent, false);
         }
 
-        // Get the {@link Songs} object located at this position in the list
+        // Get the Songs object located at this position in the list
         Songs currentSongs = getItem(position);
 
-        // Find the TextView in the list_item.xml layout with the ID version_name
+        // Find the Performer TextView in the activity_list_item.xml
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.performer);
-        // Get the version name from the current Word object and
-        // set this text on the name TextView
+        // set this text on the Performer TextView
         defaultTextView.setText(currentSongs.getPerformer());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
+        // Find the Song TextView in the activity_list_item.xml
         TextView numberTextView = (TextView) listItemView.findViewById(R.id.songName);
-        // Get the version number from the current AndroidFlavor object and
-        // set this text on the number TextView
+        // set this text on the Song TextView
         numberTextView.setText(currentSongs.getSongName());
 
-        // Return the whole list item layout (containing 2 TextViews and an ImageView)
+        // Return the whole list item layout (containing 2 TextViews)
         // so that it can be shown in the ListView
         return listItemView;
     }
+
 
 }

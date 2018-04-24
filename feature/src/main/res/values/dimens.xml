@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--dimens for main activity-->
+    <dimen name="textView1_marginTop">24dp</dimen>
+    <dimen name="editTxt_margTop">120dp</dimen>
+    <dimen name="imgNote_margStart">75dp</dimen>
+    <dimen name="imgNote_margTop">40dp</dimen>
+    <dimen name="imgSearch_margTop">140dp</dimen>
+    <dimen name="imgLib_width_height">100dp</dimen>
+    <dimen name="imgLib_margBott">170dp</dimen>
+    <dimen name="youTube_width">130dp</dimen>
+    <dimen name="youTube_margEnd">16dp</dimen>
+    <dimen name="youTube_paddRight">44dp</dimen>
+    <dimen name="googlPlay_margStart">52dp</dimen>
+
+    <!--dimens for Now Playing Activity-->
+    <dimen name="bckButtn_MargStart">16dp</dimen>
+    <dimen name="bckButtn_paddTop">28dp</dimen>
+    <dimen name="txtNow_padd">16dp</dimen>
+    <dimen name="txtNow_txtSize">24sp</dimen>
+    <dimen name="img_height">208dp</dimen>
+    <dimen name="img_margTop">75dp</dimen>
+    <dimen name="txtSong_margBott">140dp</dimen>
+    <dimen name="txtSong_padd">16dp</dimen>
+    <dimen name="txtSong_txtSize">18sp</dimen>
+    <dimen name="txtArt_margBott">96dp</dimen>
+    <dimen name="txtArt_txtSize">14sp</dimen>
+
+    <!--dimens for the activity song_list, listView-->
+    <dimen name="listView_padd">16dp</dimen>
+</resources>

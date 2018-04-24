@@ -1,6 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="mySongs">My songs</string>
     <string name="search">Search my songs</string>
     <string name="nowPlay"> % song Artist</string>
+    <string name="search_hint">search by song or artist</string>
+    <string name="SNP">You\'re listening to</string>
+    <string name="song">Song</string>
+    <string name="art">Artist</string>
 </resources>

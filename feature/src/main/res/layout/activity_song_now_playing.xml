@@ -1,75 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SongNowPlaying"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".SongNowPlaying">
+
+    <ImageButton
+        android:id="@+id/back_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/bckButtn_MargStart"
+        android:layout_marginStart="@dimen/bckButtn_MargStart"
+        android:paddingTop="@dimen/bckButtn_paddTop"
+        android:src="@drawable/ic_arrow_back" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="16dp"
-        android:textSize="24sp"
-        android:text="Now playing" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="208dp"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp"
+        android:gravity="center"
+        android:padding="@dimen/txtNow_padd"
+        android:text="@string/SNP"
+        android:textSize="@dimen/txtNow_txtSize"
+        android:textStyle="italic|bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/img_height"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/img_margTop"
         android:scaleType="centerCrop"
-        android:src="@drawable/bckgrd"
-        android:layout_alignParentLeft="true" />
+        android:src="@drawable/bckgrd" />
 
     <TextView
         android:id="@+id/song"
+        style="@style/MainStyleBars"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="153dp"
+        android:layout_marginBottom="@dimen/txtSong_margBott"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:padding="16dp"
-        android:text="song"
-        android:textSize="20dp"
-        android:layout_alignParentLeft="true" />
+        android:padding="@dimen/txtSong_padd"
+        android:text="@string/song"
+        android:textSize="@dimen/txtSong_txtSize" />
 
     <TextView
         android:id="@+id/artist"
+        style="@style/MainStyleBars"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="@dimen/txtArt_margBott"
         android:background="@color/colorPrimary"
         android:gravity="center"
-        android:padding="16dp"
-        android:text="artist"
-        android:textSize="20dp"
-        android:layout_alignParentLeft="true" />
+        android:padding="@dimen/txtSong_padd"
+        android:text="@string/art"
+        android:textSize="@dimen/txtArt_txtSize" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginStart="78dp"
-        android:orientation="horizontal"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="78dp">
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
+        <ImageView
+            style="@style/PlayBackButtons"
+            android:src="@drawable/ic_pause" />
+
+        <ImageView
+            style="@style/PlayBackButtons"
+            android:src="@drawable/ic_play_arrow" />
+
+        <ImageView
+            style="@style/PlayBackButtons"
+            android:src="@drawable/ic_stop" />
+
     </LinearLayout>
-
 
 
 </RelativeLayout>
